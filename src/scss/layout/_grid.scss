@@ -1,0 +1,13 @@
+.#{$prefix}-row{
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+
+@include generate-col;
+
+@each $key, $breakpoint in $breakpoints {
+    @media (min-width: $breakpoint){
+        @include generate-col($key);
+    }
+}

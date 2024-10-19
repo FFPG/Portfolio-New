@@ -1,0 +1,19 @@
+@mixin generate-col ($key: false){
+    @if $key {
+        @for $i from 1 through $grid-steps {
+            .#{$prefix}-col-#{$key}-#{$i}{
+                flex: 0 0 auto;
+                width: #{calc($i / $grid-steps * 100)}#{$grid-unit};
+                height: 100%;
+            }
+        }
+    } @else{
+        @for $i from 1 through $grid-steps {
+            .#{$prefix}-col-#{$i}{
+                flex: 0 0 auto;
+                width: #{calc($i / $grid-steps * 100)}#{$grid-unit};
+                height: 100%;
+            }
+        }
+    }
+}
