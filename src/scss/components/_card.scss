@@ -1,0 +1,17 @@
+.#{$prefix}-card{
+    padding-inline: 7px;
+    padding-block: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid red;
+    &__header{
+        
+    }
+    &__main{
+
+    }
+    &__footer{
+
+    }
+}
