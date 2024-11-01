@@ -1,0 +1,73 @@
+$diameter-progress: 200px;
+$diameter-progress-point: 20px; 
+
+.#{$prefix}-progress{
+    width: $diameter-progress;
+    height: $diameter-progress;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(90deg);
+    display: grid;
+    place-content: center;
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: calc(100% - $diameter-progress-point);
+        height: calc(100% - $diameter-progress-point);
+        top: calc(50%);
+        left: calc(50%);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.5px);
+        -webkit-backdrop-filter: blur(11.5px);
+        background: rgba(255, 255, 255, 0.4);
+    }
+    &__point{
+        width: $diameter-progress-point;
+        height: $diameter-progress-point;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - #{$diameter-progress-point / 2});
+        transform: translate(-50%);
+        transform-origin: calc($diameter-progress / 2) 50%;
+        transition: all 0.2s linear;
+    }
+    .active{
+        background: rgba(9, 255, 140, 0.599);
+    }
+    &--html{
+        .active{
+
+        }
+    }
+    &--css{
+        .active{
+            
+        }
+    }
+    &--scss{
+        .active{
+            
+        }
+    }
+    &--js{
+        .active{
+            
+        }
+    }
+    &--nodejs{
+        .active{
+            
+        }
+    }
+
+    &__number{
+        text-align: center;
+        line-height: 1;
+        font-size: 50px;
+        z-index: 10;
+        transform: rotate(-90deg);
+    }
+}
